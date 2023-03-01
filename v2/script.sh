@@ -28,7 +28,11 @@ function gerar_html() {
 # Executa a função pela 1a vez
 gerar_html
 
+<<<<<<< HEAD
 # Iniciar o serviço do nginx em  primeiro plano
+=======
+# Iniciar o serviço do nginx em primeiro plano
+>>>>>>> f77e0696e07c03af7486d52faf2e351da46b1db9
 nginx -g "daemon off;" &
 
 # Pega todos os nomes de namespaces e a qualquer alteração, sobreescreve o arquivo html utilizando a função
