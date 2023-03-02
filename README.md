@@ -5,7 +5,7 @@
 
 Breve descrição sobre como executar as imagens.
 
-| :warning:  IMPORTANTE:  O arquivo de configuração do cluster está nomeado como cluster.yaml no caminho /kubeconfig/cluster.yaml |
+| :warning:  IMPORTANTE:  O arquivo de configuração do cluster está nomeado como cluster.yaml no caminho /kubeconfig/cluster.yaml, além disso, os arquivos de configuração do cluster utilizado nas imagens v1 e v1.1 não estão disponibilizados neste repositório git. |
 |-----------------------------------------|
 
 
