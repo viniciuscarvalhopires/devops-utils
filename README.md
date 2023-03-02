@@ -5,7 +5,7 @@
 
 Breve descrição sobre como executar as imagens.
 
-| !!!!  IMPORTANTE:  O arquivo de configuração do cluster está nomeado como cluster.yaml no caminho /kubeconfig/cluster.yaml |
+| :warning:  IMPORTANTE:  O arquivo de configuração do cluster está nomeado como cluster.yaml no caminho /kubeconfig/cluster.yaml |
 |-----------------------------------------|
 
 
@@ -36,7 +36,7 @@ Após isso acesse: http://localhost:80/cgi-bin/get-namespaces
 A imagem *vinicpires/get-namespaces:v2* não possui arquivo de configuração inserido, portanto, cabe ao usuário informar o caminho do arquivo de configuração
 
 
-| Lembre-se que o arquivo de configuração do cluster deve estar nomeado como cluster.yaml |
+| :warning: Lembre-se que o arquivo de configuração do cluster deve estar nomeado como cluster.yaml |
 |-----------------------------------------|
 
 Para executar um container da imagem, execute o seguinte comando:
