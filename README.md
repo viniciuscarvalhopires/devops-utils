@@ -1,7 +1,7 @@
 
 # README
 
-- [REPOSTÓRIO GITHUB](https://github.com/viniciuscarvalhopires/kubectl-utilities)
+- [REPOSTÓRIO DOCKERHUB](https://hub.docker.com/repository/docker/vinicpires/get-namespaces/general)
 
 Breve descrição sobre como executar as imagens.
 
