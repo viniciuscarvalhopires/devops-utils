@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "content-type: text/html"
+echo
+echo "<html>"
+echo "<head><meta http-equiv="refresh" content="3"><head>" 
+echo "<body>"
+echo "<h1>Desafio 01 - Vinicius Carvalho Pires</h1><br><h2>Lista de namespaces: </h2><ul>" 
+# For loop utilizado para pegar o nome do namespace em cada item retornado pelo kubectl get namespaces
+for namespace in $(kubectl get ns --no-headers -o custom-columns=":metadata.name"); do
+    echo "<li>$namespace</li>"
+done
+echo "</ul></body></html>"

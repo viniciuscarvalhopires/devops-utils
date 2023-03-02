@@ -1,16 +1,16 @@
 FROM nginx:latest
 
-COPY nginx.sh /
+COPY setup.sh /
 COPY default.conf /etc/nginx/conf.d/
 COPY fcgiwrap.conf /etc/nginx/
+COPY /kubeconfig /kubeconfig
 
 RUN apt-get update && \
     apt-get install -y fcgiwrap spawn-fcgi && \
     mv /usr/sbin/fcgiwrap /usr/bin/ && \
     mkdir /usr/lib/cgi-bin -p && \
-    chmod +x nginx.sh
+    chmod +x setup.sh
     
+COPY get-namespaces /usr/lib/cgi-bin/
 
-COPY test.cgi /usr/lib/cgi-bin/
-
-ENTRYPOINT ["/bin/bash", "./nginx.sh"]
+ENTRYPOINT ["/bin/bash", "./setup.sh"]
