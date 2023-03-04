@@ -54,7 +54,7 @@ Após isso, acesse: http://localhost:80
 
 ## vinicpires/get-namespaces:v2.1
 
-A imagem *vinicpires/get-namespaces:v2.1*, coleta os namespaces de um cluster a partir de um arquivo de configuração (no diretório /kubeconfig/cluster.yaml), inserido pelo usuário ao executar um container da imagem e retorna em uma página html na url ```http://localhost:80/cgi-bin/get-namespaces```, atualizando a página a cada 3s com os namespaces atuais.
+A imagem *vinicpires/get-namespaces:v2.1*, coleta os namespaces de um cluster a partir de um arquivo de configuração (no diretório /kubeconfig/cluster.yaml), inserido pelo usuário ao executar um container da imagem e retorna em uma página html na url ```http://localhost:80/cgi-bin/get-namespaces```, atualizando a página a cada 3 segundos com os namespaces atuais.
 
 Para executar um container da imagem, execute o seguinte comando:
 ```
