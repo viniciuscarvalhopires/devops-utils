@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: deployment-restart
+  namespace: get-namespaces
+spec:
+  schedule: "*/2 * * * *"
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      template:
+        spec:
+          serviceAccountName: deployment-restart
+          containers:
+          - name: restart-container
+            image: bitnami/kubectl
+            command: ['kubectl', 'rollout', 'restart', 'deployment/get-namespaces-app']
+          restartPolicy: Never

@@ -1,0 +1,34 @@
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+    name: deployment-restart
+    namespace: get-namespaces
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: get-namespaces
+  name: deployment-restart
+rules:
+- apiGroups: ["apps", "extensions"]
+  resources: ["deployments"]
+  resourceNames: ["get-namespaces-app"]
+  verbs: ["create", "get", "list", "watch", "update", "patch", "delete"]
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: deployment-restart
+  namespace: get-namespaces
+subjects:
+- kind: ServiceAccount
+  name: deployment-restart
+  namespace: get-namespaces
+roleRef:
+  kind: Role
+  name: deployment-restart
+  apiGroup: rbac.authorization.k8s.io
