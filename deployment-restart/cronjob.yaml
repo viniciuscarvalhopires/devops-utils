@@ -4,7 +4,7 @@ metadata:
   name: deployment-restart
   namespace: get-namespaces
 spec:
-  schedule: "*/2 * * * *"
+  schedule: "30 13 * * *"
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
   jobTemplate:

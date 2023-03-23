@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: get-namespaces
+  name: get-namespaces-app
+spec:
+  selector:
+    matchLabels:
+      app: get-namespaces-app
+  template:
+    metadata:
+      labels:
+        app: get-namespaces-app
+    spec:
+      containers:
+      - name: get-namespaces-app
+        image: vinicpires/get-namespaces:arm64
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+        envFrom:
+        - secretRef:
+            name: keda-rabbitmq-secret

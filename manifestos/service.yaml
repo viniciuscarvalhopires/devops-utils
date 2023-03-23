@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: get-namespaces
+  name: get-namespaces-service
+spec:
+  selector:
+    app: get-namespaces-app
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
