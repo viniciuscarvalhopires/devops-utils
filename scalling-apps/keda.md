@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: keda-rabbitmq-secret
+    namespace: get-namespaces
+data:
+    host: YW1xcDovL3VzZXI6Znk3VHprbklMNWIyUVQwdUBtdS1yYWJiaXQtcmFiYml0bXEucmFiYml0LnN2Yy5jbHVzdGVyLmxvY2FsLw==
+---
+apiVersion: keda.sh/v1alpha1
+kind: TriggerAuthentication
+metadata:
+    name: keda-trigger-auth-rabbitmq-conn
+    namespace: get-namespaces
+spec: 
+    secretTargetRef:
+      - parameter: host
+        name: keda-rabbitmq-secret
+        key: host
+---
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: app-scaledobject
+  namespace: get-namespaces
+spec:
+  scaleTargetRef:
+    name: get-namespaces-app
+    envSourceContainerName: get-namespaces-app                             # Optional. Default: ignored, must be less than minReplicaCount 
+  minReplicaCount:  1                               # Optional. Default: 0
+  maxReplicaCount:  10                              # Optional. Default: 100
+  advanced:                                          # Optional. Section to specify advanced options
+    restoreToOriginalReplicaCount: true      # Optional. Default: false
+    horizontalPodAutoscalerConfig:                   # Optional. Section to specify HPA related options
+      behavior:                                      # Optional. Use to modify HPA's scaling behavior
+        scaleDown:
+          stabilizationWindowSeconds: 30
+          policies:
+          - type: Percent
+            value: 100
+            periodSeconds: 15
+  triggers:
+  - type: rabbitmq
+    metadata:
+      protocol: amqp
+      queueName: teste
+      mode: QueueLength
+      value: "1"
+      #metricName: custom-teste # DEPRECATED: This parameter is deprecated as of KEDA v2.10 and will be removed in version `2.12`. optional.  Generated value would be `rabbitmq-custom-testqueue`
+    authenticationRef:
+      name: keda-trigger-auth-rabbitmq-conn  
