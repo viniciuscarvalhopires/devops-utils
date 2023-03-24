@@ -1,0 +1,9 @@
+apiVersion: v2
+name: get-namespaces
+description: Chart helm da aplicação get-namespaces
+
+type: application
+
+version: 0.1.0
+
+appVersion: "1.16.0"
