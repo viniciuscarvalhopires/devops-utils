@@ -13,7 +13,7 @@ print('''
 
 namespaces = subprocess.check_output(
     ["kubectl", "get", "ns", "--no-headers", "-o", "custom-columns=:metadata.name"]).decode().splitlines()
-
+    
 for namespace in namespaces:
     print(f"<li>{ namespace }</li>")
 
