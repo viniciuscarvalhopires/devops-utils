@@ -3,7 +3,6 @@ FROM nginx:latest
 COPY setup.sh /
 COPY default.conf /etc/nginx/conf.d/
 COPY fcgiwrap.conf /etc/nginx/
-COPY /kubeconfig /kubeconfig
 
 RUN apt-get update && \
     apt-get install -y fcgiwrap spawn-fcgi && \

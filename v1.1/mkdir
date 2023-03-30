@@ -16,9 +16,9 @@ clusters:
       TM2Rnc2UktENGkvdHlkQ2prT3plOFdJMjJrTUFvR0NDcUdTTTQ5QkFNQ0EwZ0FNRVVDSURtdgpjb\
       Vo3RzAvUDJtbWFCTHl6Y0FRMlE3bTFDU2ZIVzc3N1N3ekxsdHFuQWlFQSs5R1FoMzE0djNLL2pFU\
       3NKa0JECnllSDhyVktBVW9kVjByZjNwcUZpdDNNPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t"
-- name: "desafio-node1"
+- name: "desafio-cluster"
   cluster:
-    server: "https://10.182.0.4:6443"
+    server: "https://10.182.0.3:6443"
     certificate-authority-data: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM0VENDQ\
       WNtZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFTTVJBd0RnWURWUVFERXdkcmRXSmwKT\
       FdOaE1CNFhEVEl6TURNeU5URTBORFl6TjFvWERUTXpNRE15TWpFME5EWXpOMW93RWpFUU1BNEdBM\
@@ -38,9 +38,9 @@ clusters:
       25sV1BTcisxbmpqdm9QQUlodjF1R3ltcy9JMTdhRUZOeWVGcEtFY1NqN2VGZgoxT0hpVWw1SE1QW\
       FhTaWFmTUxyelRDeGwvWktSbnhWci9QT3hUdzhwcEVKbjNZeDNUdEo4RFBKbGk1Y2psenZJClBuc\
       GRWeW9sTGF6OE5ra2pIbWoyT1dkNEhrYWEKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
-- name: "desafio-cluster"
+- name: "desafio-node1"
   cluster:
-    server: "https://10.182.0.3:6443"
+    server: "https://10.182.0.4:6443"
     certificate-authority-data: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM0VENDQ\
       WNtZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFTTVJBd0RnWURWUVFERXdkcmRXSmwKT\
       FdOaE1CNFhEVEl6TURNeU5URTBORFl6TjFvWERUTXpNRE15TWpFME5EWXpOMW93RWpFUU1BNEdBM\
@@ -64,7 +64,7 @@ clusters:
 users:
 - name: "desafio"
   user:
-    token: "kubeconfig-user-mfxnrlfxjk:9vx4c2qtvt8nbldvkqm8stz5gnqmzbnqqbzkq7hx46mff75c227xqr"
+    token: "kubeconfig-user-mfxnr6p4qk:6dwqrccpj5x7lv4gj5dvb6hk642xts4zpktk9vcp9sc6b8pk992dmm"
 
 
 contexts:
@@ -72,13 +72,14 @@ contexts:
   context:
     user: "desafio"
     cluster: "desafio"
-- name: "desafio-node1"
-  context:
-    user: "desafio"
-    cluster: "desafio-node1"
 - name: "desafio-cluster"
   context:
     user: "desafio"
     cluster: "desafio-cluster"
+- name: "desafio-node1"
+  context:
+    user: "desafio"
+    cluster: "desafio-node1"
 
 current-context: "desafio"
+

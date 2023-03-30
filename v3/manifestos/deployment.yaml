@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: get-namespaces-app
+  namespace: get-namespaces
+spec:
+  selector:
+    matchLabels:
+      app: get-namespaces-app
+  template:
+    metadata:
+      labels:
+        app: get-namespaces-app
+    spec:
+      serviceAccountName: get-namespaces-sa
+      containers:
+      - name: get-namespaces-app
+        image: vinicpires/get-namespaces:teste
+        ports:
+        - containerPort: 80

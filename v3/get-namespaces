@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+import subprocess
+print("content-type: text/html")
+print("")
+
+print('''
+    <html>
+    <head><meta http-equiv="refresh" content="3"></head>
+    <body>
+    <h2>Desafio com script python</h2>
+    <ul>
+    ''')
+
+namespaces = subprocess.check_output(
+    ["kubectl", "get", "ns", "--no-headers", "-o", "custom-columns=:metadata.name"]).decode().splitlines()
+
+for namespace in namespaces:
+    print(f"<li>{ namespace }</li>")
+
+print(''' 
+    </ul>
+    </body>
+    </html>
+    ''')  
