@@ -15,6 +15,6 @@ spec:
       serviceAccountName: get-namespaces-sa
       containers:
       - name: get-namespaces-app
-        image: vinicpires/get-namespaces:teste
+        image: vinicpires/get-namespaces:python
         ports:
         - containerPort: 80
