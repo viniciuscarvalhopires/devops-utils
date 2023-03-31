@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: get-namespaces-ingress
+  namespace: get-namespaces
+  labels:
+    name: get-namespaces-ingress
+spec:
+  rules:
+  - host: desafio-vinicius.ddns.net
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: get-namespaces-service
+            port: 
+              number: 80
