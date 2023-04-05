@@ -1,3 +1,4 @@
 fastapi
 kubernetes
 uvicorn
+python-multipart
