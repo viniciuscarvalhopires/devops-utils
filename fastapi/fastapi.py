@@ -11,9 +11,6 @@ config.load_incluster_config()
 
 api = client.CoreV1Api()
 
-class Namespace(BaseModel):
-    name: str
-
 @app.get("/")
 async def index():
     html_content = '''<html>
