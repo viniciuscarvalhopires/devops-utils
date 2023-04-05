@@ -1,5 +1,7 @@
 ## vinicpires/get-namespaces:v3
 
+**O arquivo fastapi-old.py se refere a v1**
+
 A imagem *vinicpires/get-namespaces:fastapi* utiliza scripts em python para a automação da coleta de namespaces e não possui arquivo de configuração de cluster inserido, portanto, ao aplicar os manifestos da pasta **manifestos**, certifique-se de que a ClusterRole, ClusterRoleBinding e ServiceAccount foram criadas corretamente.
 
 | :warning: O endpoint **/delete** recebe uma requisição POST através do form html.
