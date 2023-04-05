@@ -35,7 +35,7 @@ A imagem *vinicpires/get-namespaces:fastapi* utiliza scripts em python para a au
 | :---------- | :--------- | :------------------------------------------ |
 | `namespace`      | `string` | **Obrigatório**. Namespace a ser deletado |
 
-#### Deletar namespace
+#### Criar namespace
 
 ```http
   POST /create
