@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/app/templates/assets/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="/delete" method="POST">
+            <h2>Deletar namespace</h2>
+            <label for="namespace">Nome do namespace</label>
+            <input type="text" name="namespace" id="namespace" required>
+            <input class="delete" type="submit" value="Deletar">
+        </form>
+    </div>
+
+
+    <div class="container">
+        <form action="/create" method="POST">
+            <h2>Criar namespace</h2>
+            <label for="namespace">Nome do namespace</label>
+            <input type="text" name="namespace" id="namespace" required>
+            <input class="create" type="submit" value="Criar">
+        </form>
+    </div>
+    <a class="button" href="/namespaces-json">Namespaces: JSON</a>
+</body>
+
+</html>
