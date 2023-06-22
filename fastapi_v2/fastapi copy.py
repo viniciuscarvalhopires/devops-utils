@@ -12,19 +12,19 @@ config.load_kube_config(config_file="/home/vinicius/.kube/lab.yaml")
 
 api = client.CoreV1Api()
 
-templates = Jinja2Templates(directory="/templates/jinja")
+templates = Jinja2Templates(directory="/app/templates/jinja")
 
 @app.get("/css")
 async def get_css():
-    return FileResponse("/templates/assets/index-style.css", media_type="text/css")
+    return FileResponse("/app/templates/assets/index-style.css", media_type="text/css")
 
 @app.get("/namespaces-css")
 async def get_css():
-    return FileResponse("/templates/assets/namespaces-css.css", media_type="text/css")
+    return FileResponse("/app/templates/assets/namespaces-css.css", media_type="text/css")
 
 @app.get("/")
 async def index():
-    return FileResponse("/templates/static/index.html")
+    return FileResponse("/app/templates/static/index.html")
     
 
 @app.get("/namespaces-json")

@@ -4,14 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <head><meta http-equiv="refresh" content="3"></head>
-    <title>Document</title>
+    <meta http-equiv="refresh" content="3">
+    <link rel="stylesheet" href="/namespaces-css">
+    <title>Desafio</title>
 </head>
 <body>
      <html>
         <body>
-        <h2>Lista de namespaces</h2>
-        <ul>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Namespace</th>
+                    <th>Status</th>
+                    <th>Deployments</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for namespace in namespaces %}
+                <tr>
+                    <td>{{ namespace.metadata.name }}</td>
+                    <td>{{ namespace.status.phase }}</td>
+                    <td><a href="/namespaces/{{ namespace.metadata.name }}">Deployments</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
         
 </body>
 </html>

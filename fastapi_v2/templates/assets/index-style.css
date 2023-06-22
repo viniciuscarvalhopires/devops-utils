@@ -7,6 +7,14 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 400px;
+    height: fit-content;
 }
 
 form h2 {
@@ -31,6 +39,7 @@ input[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.5s;
 }
 
 .create {
@@ -49,26 +58,31 @@ input[type=submit] {
     background-color: #da190b;
 }
 
-.container {
-    border-radius: 5px;
+.form-container {
     background-color: #f2f2f2;
     padding: 20px;
     width: 400px;
 
     text-align: center;
-
 }
-
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
 .button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 10px;
     background-color: #4CAF50;
     color: white;
     text-decoration: none;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s all;
 }
 
 .button:hover {
-    background-color: #45a049;
+    background-color: #296952;
+}
+
+.form-container {
+    margin-top: 10px;
 }
